@@ -15,6 +15,8 @@ public class DependencyApplication {
 
         Customer cus = context.getBean( Customer.class);
         cus.display();
+
+
     }
 
 }
