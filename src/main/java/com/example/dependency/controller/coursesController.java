@@ -3,6 +3,7 @@ package com.example.dependency.controller;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -11,11 +12,11 @@ import javax.servlet.http.HttpSession;
 public class coursesController {
 
     @RequestMapping("/")
-    public String courses(@RequestParam("cname") String course, HttpSession session){
+    public ModelAndView courses(@RequestParam("cname") String course, HttpSession session){
 
-
-        session.setAttribute( "cname", course);
-        System.out.println("welcome");
-        return "course";
+        ModelAndView mv = new ModelAndView();
+        mv.addObject("cname", course);
+        mv.setViewName("course");
+        return mv;
     }
 }
