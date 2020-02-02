@@ -1,65 +1,44 @@
 package com.example.dependency.model;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component
 public class Customer {
 
-    private int cusId;
-    private String custName;
-
-    @Autowired
-    private Technologies techDetail;
-
-    public Technologies getTechDetail() {
-        return techDetail;
-    }
-
-    public void setTechDetail(Technologies techDetail) {
-        this.techDetail = techDetail;
-    }
-
-    public Customer() {
-    }
+    private int cid;
+    private int cname;
+    private int cemail;
 
     @Override
     public String toString() {
         return "Customer{" +
-                "cusId=" + cusId +
-                ", custName='" + custName + '\'' +
-                ", courseName='" + courseName + '\'' +
+                "cid=" + cid +
+                ", cname=" + cname +
+                ", cemail=" + cemail +
                 '}';
     }
 
-    public int getCusId() {
-        return cusId;
+    public int getCid() {
+        return cid;
     }
 
-    public void setCusId(int cusId) {
-        this.cusId = cusId;
+    public void setCid(int cid) {
+        this.cid = cid;
     }
 
-    public String getCustName() {
-        return custName;
+    public int getCname() {
+        return cname;
     }
 
-    public void setCustName(String custName) {
-        this.custName = custName;
+    public void setCname(int cname) {
+        this.cname = cname;
     }
 
-    public String getCourseName() {
-        return courseName;
+    public int getCemail() {
+        return cemail;
     }
 
-    public void setCourseName(String courseName) {
-        this.courseName = courseName;
+    public void setCemail(int cemail) {
+        this.cemail = cemail;
     }
-
-    private String courseName;
-    public void display(){
-        System.out.println("Returned");
-        techDetail.tech();
-    }
-
 }

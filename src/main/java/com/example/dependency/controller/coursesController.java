@@ -10,13 +10,13 @@ import javax.servlet.http.HttpSession;
 
 @Controller
 public class coursesController {
-
-    @RequestMapping("/")
-    public ModelAndView courses(@RequestParam("cname") String course, HttpSession session){
-
-        ModelAndView mv = new ModelAndView();
-        mv.addObject("cname", course);
-        mv.setViewName("course");
-        return mv;
-    }
+//
+//    @RequestMapping("/")
+//    public ModelAndView courses(@RequestParam("cname") String course, HttpSession session){
+//
+//        ModelAndView mv = new ModelAndView();
+//        mv.addObject("cname", course);
+//        mv.setViewName("course");
+//        return mv;
+//    }
 }

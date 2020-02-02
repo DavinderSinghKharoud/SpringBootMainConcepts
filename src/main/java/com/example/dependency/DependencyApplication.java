@@ -13,9 +13,6 @@ public class DependencyApplication {
                 SpringApplication.run(DependencyApplication.class, args);
 
 
-        Customer cus = context.getBean( Customer.class);
-        cus.display();
-
 
     }
 
