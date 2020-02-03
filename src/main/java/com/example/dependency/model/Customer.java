@@ -2,9 +2,13 @@ package com.example.dependency.model;
 
 import org.springframework.stereotype.Component;
 
-@Component
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
 public class Customer {
 
+    @Id
     private int cid;
     private int cname;
     private int cemail;
