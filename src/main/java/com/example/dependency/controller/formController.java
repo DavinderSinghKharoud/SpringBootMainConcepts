@@ -54,5 +54,11 @@ public class formController {
         return repo.findAll().toString();
     }
 
+    @RequestMapping("/getCustomers/{cid}")
+    @ResponseBody
+    public String getByID(@PathVariable("cid") int cid){
+        return repo.findById(cid).toString();
+    }
+
 
 }
