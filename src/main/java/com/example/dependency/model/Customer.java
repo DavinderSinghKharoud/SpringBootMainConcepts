@@ -10,15 +10,18 @@ public class Customer {
 
     @Id
     private int cid;
-    private int cname;
-    private int cemail;
+    private String cname;
+    private String cemail;
+
+    public Customer() {
+    }
 
     @Override
     public String toString() {
         return "Customer{" +
                 "cid=" + cid +
-                ", cname=" + cname +
-                ", cemail=" + cemail +
+                ", cname='" + cname + '\'' +
+                ", cemail='" + cemail + '\'' +
                 '}';
     }
 
@@ -30,19 +33,19 @@ public class Customer {
         this.cid = cid;
     }
 
-    public int getCname() {
+    public String getCname() {
         return cname;
     }
 
-    public void setCname(int cname) {
+    public void setCname(String cname) {
         this.cname = cname;
     }
 
-    public int getCemail() {
+    public String getCemail() {
         return cemail;
     }
 
-    public void setCemail(int cemail) {
+    public void setCemail(String cemail) {
         this.cemail = cemail;
     }
 }

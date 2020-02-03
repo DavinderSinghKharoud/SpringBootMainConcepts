@@ -5,10 +5,11 @@
     <title>Customer Details</title>
 </head>
 <body>
-<h1>Customer Details</h1>
-<h4>Customer ID : ${cid}</h4>
-<h4>Customer name : ${cname}</h4>
-<h4>Customer Email: ${cemail}</h4>
+<h1>Get Customer Details</h1>
+<form action="getDetails" method="post">
+    Enter Customer ID: <input type="text" name="cid">
+    <input type="submit" value="Submit">
 
+</form>
 </body>
 </html>
