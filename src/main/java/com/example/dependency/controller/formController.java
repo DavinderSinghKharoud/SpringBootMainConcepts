@@ -68,5 +68,9 @@ public class formController {
         repo.delete( cust );
         return cust;
     }
-
+    @PutMapping(value = "/customers",consumes = {"application/json"})
+    public Customer getCustomer1(@RequestBody Customer customer){
+        repo.save( customer);
+        return customer;
+    }
 }
