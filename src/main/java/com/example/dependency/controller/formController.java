@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.rmi.MarshalledObject;
+import java.util.List;
+import java.util.Optional;
 
 @Controller
 public class formController {
@@ -50,15 +52,21 @@ public class formController {
 
     @RequestMapping("/getCustomers")
     @ResponseBody
-    public String getCustomer(){
-        return repo.findAll().toString();
+    public List<Customer> getCustomer(){
+        return repo.findAll();
     }
 
     @RequestMapping("/getCustomers/{cid}")
     @ResponseBody
-    public String getByID(@PathVariable("cid") int cid){
-        return repo.findById(cid).toString();
+    public Optional<Customer> getByID(@PathVariable("cid") int cid){
+        return repo.findById(cid);
     }
 
+    @DeleteMapping("/deleteCus/{cid}")
+    public Customer getCustomerId(@PathVariable("cid") int cid){
+        Customer cust = repo.getOne( cid );
+        repo.delete( cust );
+        return cust;
+    }
 
 }
