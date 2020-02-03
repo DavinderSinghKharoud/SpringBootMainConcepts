@@ -6,10 +6,7 @@ import com.sun.org.apache.xpath.internal.operations.Mod;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.rmi.MarshalledObject;
@@ -49,6 +46,12 @@ public class formController {
         mv.addObject(customer);
         return mv;
 
+    }
+
+    @RequestMapping("/getCustomers")
+    @ResponseBody
+    public String getCustomer(){
+        return repo.findAll().toString();
     }
 
 
