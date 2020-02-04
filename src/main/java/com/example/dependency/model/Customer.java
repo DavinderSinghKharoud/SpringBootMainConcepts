@@ -3,12 +3,14 @@ package com.example.dependency.model;
 import org.springframework.stereotype.Component;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 @Entity
 public class Customer {
 
     @Id
+    @GeneratedValue
     private int cid;
     private String cname;
     private String cemail;

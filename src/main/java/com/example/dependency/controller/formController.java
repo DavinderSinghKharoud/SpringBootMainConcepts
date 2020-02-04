@@ -15,62 +15,63 @@ import java.util.Optional;
 
 @Controller
 public class formController {
-
-    @Autowired
-    CustomerRepo repo;
-
-    @RequestMapping("/customer")
-    public String customer() {
-        return "customers";
-    }
-
-    @RequestMapping("/details")
-    public String details(Customer customer) {
-        repo.save(customer);
-        return "customers";
-    }
-
-    @RequestMapping("/getId")
-    public String viewDetails(Customer customer) {
-        return "viewCustomers";
-    }
-
-    //    @GetMapping("/customer")
-//    public String customer(){
+//
+//    @Autowired
+//    CustomerRepo repo;
+//
+//    @RequestMapping("/customer")
+//    public String customer() {
 //        return "customers";
 //    }
 //
-    @PostMapping("/getDetails")
-    public ModelAndView viewDetails(@RequestParam int cid) {
-
-        ModelAndView mv = new ModelAndView("retreive");
-        Customer customer = repo.findById(cid).orElse(null);
-        mv.addObject(customer);
-        return mv;
-
-    }
-
-    @RequestMapping("/getCustomers")
-    @ResponseBody
-    public List<Customer> getCustomer(){
-        return repo.findAll();
-    }
-
-    @RequestMapping("/getCustomers/{cid}")
-    @ResponseBody
-    public Optional<Customer> getByID(@PathVariable("cid") int cid){
-        return repo.findById(cid);
-    }
-
-    @DeleteMapping("/deleteCus/{cid}")
-    public Customer getCustomerId(@PathVariable("cid") int cid){
-        Customer cust = repo.getOne( cid );
-        repo.delete( cust );
-        return cust;
-    }
-    @PutMapping(value = "/customers",consumes = {"application/json"})
-    public Customer getCustomer1(@RequestBody Customer customer){
-        repo.save( customer);
-        return customer;
-    }
+//    @RequestMapping("/details")
+//    public String details(Customer customer) {
+//        repo.save(customer);
+//        return "customers";
+//    }
+//
+//    @RequestMapping("/getId")
+//    public String viewDetails(Customer customer) {
+//        return "viewCustomers";
+//    }
+//
+//    //    @GetMapping("/customer")
+////    public String customer(){
+////        return "customers";
+////    }
+////
+//    @PostMapping("/getDetails")
+//    public ModelAndView viewDetails(@RequestParam int cid) {
+//
+//        ModelAndView mv = new ModelAndView("retreive");
+//        Customer customer = repo.findById(cid).orElse(null);
+//        mv.addObject(customer);
+//        return mv;
+//
+//    }
+//
+//    @RequestMapping("/getCustomers")
+//    @ResponseBody
+//    public List<Customer> getCustomer(){
+//        return repo.findAll();
+//    }
+//
+//    @RequestMapping("/getCustomers/{cid}")
+//    @ResponseBody
+//    public Optional<Customer> getByID(@PathVariable("cid") int cid){
+//        return repo.findById(cid);
+//    }
+//
+//    @DeleteMapping("/deleteCus/{cid}")
+//    public Customer getCustomerId(@PathVariable("cid") int cid){
+//        Customer cust = repo.getOne( cid );
+//        repo.delete( cust );
+//        return cust;
+//    }
+//
+//    @PutMapping(value = "/customers",consumes = {"application/json"})
+//    public Customer getCustomer1(@RequestBody Customer customer){
+//        repo.save( customer);
+//        return customer;
+//    }
 }
